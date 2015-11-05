@@ -3,8 +3,8 @@ require 'spec_helper'
 
 describe Bibliografia do
     before :each do
-        @b1 = Bibliografia.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler'],'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide','The Facets of Ruby')
-        @b2 = Bibliografia.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler'],'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide')
+        @b1 = Bibliografia.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler'],'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide','Pragmatic Bookshelf','The Facets of Ruby')
+        @b2 = Bibliografia.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler'],'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide','Pragmatic Bookshelf')
     end
     
     describe "Datos de la bibliografia" do
@@ -19,6 +19,10 @@ describe Bibliografia do
         it "Serie" do
             @b1.z.should eq('The Facets of Ruby')
             @b2.z.should eq('0')
+        end
+        it "Editorial" do
+            @b1.w.should eq('Pragmatic Bookshelf')
+            @b2.w.should eq('Pragmatic Bookshelf')
         end
     end
 end
