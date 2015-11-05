@@ -1,6 +1,7 @@
 class Bibliografia
-    attr_reader :x
-    def initialize(autor)
+    attr_reader :x,:y
+    def initialize(autor, titulo)
         @x = autor
+        @y = titulo
     end
 end
