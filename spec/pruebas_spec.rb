@@ -3,8 +3,8 @@ require 'spec_helper'
 
 describe Bibliografia do
     before :each do
-        @b1 = Bibliografia.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler'],'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide','Pragmatic Bookshelf',4,'July 7, 2013','The Facets of Ruby')
-        @b2 = Bibliografia.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler'],'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide','Pragmatic Bookshelf',4,'July 7, 2013')
+        @b1 = Bibliografia.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler'],'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide','Pragmatic Bookshelf',4,'July 7, 2013',['ISBN-13: 978-1937785499', 'ISBN-10: 1937785491'],'The Facets of Ruby')
+        @b2 = Bibliografia.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler'],'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide','Pragmatic Bookshelf',4,'July 7, 2013',['ISBN-13: 978-1937785499', 'ISBN-10: 1937785491'])
     end
     
     describe "Datos de la bibliografia" do
@@ -31,6 +31,10 @@ describe Bibliografia do
         it "Fecha de publicacion" do
             @b1.s.should eq('July 7, 2013')
             @b2.s.should eq('July 7, 2013')
+        end
+        it "ISBN" do
+             @b1.m.should eq(['ISBN-13: 978-1937785499', 'ISBN-10: 1937785491'])
+             @b2.m.should eq(['ISBN-13: 978-1937785499', 'ISBN-10: 1937785491'])
         end
     end
 end
