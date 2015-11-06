@@ -15,4 +15,7 @@ class Bibliografia
     def gettitulo
         @y
     end
+    def getserie
+        @z
+    end
 end
