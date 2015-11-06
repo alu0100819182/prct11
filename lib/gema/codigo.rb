@@ -12,4 +12,7 @@ class Bibliografia
     def getautor 
         @x
     end
+    def gettitulo
+        @y
+    end
 end
