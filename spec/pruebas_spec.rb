@@ -47,5 +47,8 @@ describe Bibliografia do
         it "Obtener serie" do
             @b1.getserie.should == ('The Facets of Ruby')
         end
+        it "Obtener editorial" do
+            @b1.geteditorial.should == ('Pragmatic Bookshelf')
+        end
     end
 end
