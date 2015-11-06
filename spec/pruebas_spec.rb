@@ -37,4 +37,9 @@ describe Bibliografia do
              @b2.m.should eq(['ISBN-13: 978-1937785499', 'ISBN-10: 1937785491'])
         end
     end
+    describe "Metodos de obtencion" do
+        it "Obtener autor" do
+            @b1.getautor.should == (['Dave Thomas', 'Andy Hunt', 'Chad Fowler'])
+        end
+    end
 end
