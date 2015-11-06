@@ -24,4 +24,7 @@ class Bibliografia
     def getedicion
         @t
     end
+    def getpublicacion
+        @s
+    end
 end
