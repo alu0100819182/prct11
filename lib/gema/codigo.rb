@@ -27,4 +27,7 @@ class Bibliografia
     def getpublicacion
         @s
     end
+    def getisbn
+        @m
+    end
 end
