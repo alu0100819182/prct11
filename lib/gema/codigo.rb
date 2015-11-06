@@ -9,4 +9,7 @@ class Bibliografia
         @m = isbn
         @z = serie
     end
+    def getautor 
+        @x
+    end
 end
