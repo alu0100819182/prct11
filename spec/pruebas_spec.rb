@@ -56,5 +56,8 @@ describe Bibliografia do
         it "Obtener fecha de publicacion" do
             @b1.getpublicacion.should == ('July 7, 2013')
         end
+        it "Obtener listado de isbn" do
+            @b1.getisbn.should == (['ISBN-13: 978-1937785499', 'ISBN-10: 1937785491'])
+        end
     end
 end
