@@ -50,5 +50,11 @@ describe Bibliografia do
         it "Obtener editorial" do
             @b1.geteditorial.should == ('Pragmatic Bookshelf')
         end
+        it "Obtener numero de edicion" do
+            @b1.getedicion.should == (4)
+        end
+        it "Obtener fecha de publicacion" do
+            @b1.getpublicacion.should == ('July 7, 2013')
+        end
     end
 end

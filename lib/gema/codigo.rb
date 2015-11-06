@@ -18,4 +18,10 @@ class Bibliografia
     def getserie
         @z
     end
+    def geteditorial
+        @w
+    end
+    def getedicion
+        @t
+    end
 end
