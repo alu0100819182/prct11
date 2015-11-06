@@ -30,4 +30,7 @@ class Bibliografia
     def getisbn
         @m
     end
+    def to_s
+        "Autores: #@x, Título: #@y, Serie: #@z, Editorial: #@w, #@t Edición, Fecha de Publicación: #@s y ISBN: #@m"
+    end
 end

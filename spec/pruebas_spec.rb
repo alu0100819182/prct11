@@ -59,5 +59,8 @@ describe Bibliografia do
         it "Obtener listado de isbn" do
             @b1.getisbn.should == (['ISBN-13: 978-1937785499', 'ISBN-10: 1937785491'])
         end
+        it "Referencia formateda" do
+            @b1.to_s.should == ("Autores: [\"Dave Thomas\", \"Andy Hunt\", \"Chad Fowler\"], Título: Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide, Serie: The Facets of Ruby, Editorial: Pragmatic Bookshelf, 4 Edición, Fecha de Publicación: July 7, 2013 y ISBN: [\"ISBN-13: 978-1937785499\", \"ISBN-10: 1937785491\"]")
+        end
     end
 end
