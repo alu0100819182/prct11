@@ -41,5 +41,8 @@ describe Bibliografia do
         it "Obtener autor" do
             @b1.getautor.should == (['Dave Thomas', 'Andy Hunt', 'Chad Fowler'])
         end
+         it "Obtener titulo" do
+            @b1.gettitulo.should == ('Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide')
+        end
     end
 end
