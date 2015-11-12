@@ -1,4 +1,5 @@
 require 'gema/codigo.rb'
+require 'gema/listaenlazada.rb'
 require 'spec_helper'
 
 describe Bibliografia do
@@ -70,3 +71,20 @@ describe Bibliografia do
         end
     end
 end
+
+describe Nodo do
+    before :each do
+        @n1 = Nodo.new(1,1)
+    end
+    
+        describe "Almacenamiento de los valores del nodo" do
+            it "Data" do
+                expect(@n1.data).to eq(1)
+            end
+            it "Siguiente" do
+                expect(@n1.siguiente).to eq(1)
+            end
+    end
+    
+end
+
