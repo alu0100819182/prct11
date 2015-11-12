@@ -88,3 +88,14 @@ describe Nodo do
     
 end
 
+describe Lista do
+    before :each do
+        @l1 = Lista.new();
+    end
+    
+    describe "Pruebas de la lista" do
+        it "Se extrae el primer elemento de la lista" do
+            expect(@l1.extract).to eq(true)
+        end
+    end
+end
