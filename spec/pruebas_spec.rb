@@ -91,11 +91,12 @@ end
 describe Lista do
     before :each do
         @l1 = Lista.new();
+        @b1 = Bibliog.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, ['9781937785499', '1937785491'], 'The Facets of Ruby')
     end
     
     describe "Pruebas de la lista" do
-        it "Se extrae el primer elemento de la lista" do
-            expect(@l1.extract).to eq(true)
+        it "Se puede insertar elemento" do
+            expect(@l1.insert(@b1)).to eq(true)
         end
     end
 end
