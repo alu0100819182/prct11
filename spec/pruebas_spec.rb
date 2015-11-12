@@ -93,11 +93,16 @@ describe Listaenlazada do
     before :each do
         @b1 = Bibliografia.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler'],'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide','Pragmatic Bookshelf',4,'July 7, 2013',['ISBN-13: 978-1937785499', 'ISBN-10: 1937785491'],'The Facets of Ruby')
         @l1 = Listaenlazada.new()
+        @l2 = Listaenlazada.new()
     end
     
     describe "/ Pruebas de la lista" do
         it "/ Se puede insertar elemento" do
-             expect(@l1.insert(@biblio1)).to eq(true)
+            expect(@l1.insert(@biblio1)).to eq(true)
+        end
+        it "/ Se puede extraer un elemento" do
+            expect(@l1.extract).to eq(@biblio1)
         end
     end
+    
 end
