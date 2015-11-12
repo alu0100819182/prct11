@@ -88,15 +88,16 @@ describe Nodo do
     
 end
 
-describe Lista do
+describe Listaenlazada do
+   
     before :each do
-        @l1 = Lista.new();
-        @b1 = Bibliog.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7', 2013, ['9781937785499', '1937785491'], 'The Facets of Ruby')
+        @b1 = Bibliografia.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler'],'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide','Pragmatic Bookshelf',4,'July 7, 2013',['ISBN-13: 978-1937785499', 'ISBN-10: 1937785491'],'The Facets of Ruby')
+        @l1 = Listaenlazada.new()
     end
     
-    describe "Pruebas de la lista" do
-        it "Se puede insertar elemento" do
-            expect(@l1.insert(@b1)).to eq(true)
+    describe "/ Pruebas de la lista" do
+        it "/ Se puede insertar elemento" do
+             expect(@l1.insert(@biblio1)).to eq(true)
         end
     end
 end
