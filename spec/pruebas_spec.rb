@@ -94,6 +94,7 @@ describe Listaenlazada do
         @biblio4 = Bibliografia.new(['David Chelimsky','Dave Astels','Bryan Helmkamp','Dan North','Zach Dennis','Aslak Hellesoy'], 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'Pragmatic Bookshelf', 1, 'December 25 2010', ['1934356379','9781934356371'], 'The Facets of Ruby')
         @biblio5 = Bibliografia.new('Richard E. Silverman','Git Pocket Guide', 'O’Reilly Media', 1, 'August 2 2013', ['1449325866','9781449325862'])
         @l1 = Listaenlazada.new()
+        @l2 = Listaenlazada.new()
         
     end
   
@@ -109,6 +110,19 @@ describe Listaenlazada do
         it "/Debe existir una cabeza" do
             cabeza = @l1.ini
         end
-    
+        
+        it "/ Relacion entre todas las bibliografias, insertando y extrayendo" do
+             expect(@l2.insert(@biblio1)).to eq(true) 
+             expect(@l2.insert(@biblio2)).to eq(true) 
+             expect(@l2.insert(@biblio3)).to eq(true) 
+             expect(@l2.insert(@biblio4)).to eq(true) 
+             expect(@l2.insert(@biblio5)).to eq(true) 
+             expect(@l2.extract).to eq(@biblio1)
+             expect(@l2.extract).to eq(@biblio2)
+             expect(@l2.extract).to eq(@biblio3)
+             expect(@l2.extract).to eq(@biblio4)
+             expect(@l2.extract).to eq(@biblio5)
+        end
+        
     end
 end

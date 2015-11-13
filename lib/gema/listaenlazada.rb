@@ -25,7 +25,7 @@ class Listaenlazada
             @fin.next = n
             @fin = n
         end
-        true
+        return true
     end
     
     def extract
