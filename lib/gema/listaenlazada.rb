@@ -1,31 +1,37 @@
-Nodo = Struct.new(:data, :siguiente)
+Nodo = Struct.new(:value,:next)
 
-    class Listaenlazada
-    attr_reader :beginning, :endd
+class Listaenlazada
+    attr_reader :ini, :fin
     
-        def initialize
-            @beginning = nil
-            @endd = nil
+    def initialize
+        @ini = nil
+        @fin = nil
+    end
+    
+    def empty
+        if (@ini == nil)
+            return true
+        else
+            return false
         end
-        
-        def empty
-            if(@beginnig==nil)
-                return true
-            else
-                return false
-            end
+    end
+    
+    def insert (v)
+        n = Nodo.new(v,nil)
+        if(empty == true)
+            @fin = n
+            @ini = n
+        else
+            @fin.next = n
+            @fin = n
         end
-
-        def insert (valor)
-            n = Nodo.new(valor, nil)
-            if(empty==true)
-                @beginning = n
-                @endd = n
-            else
-                @endd.siguiente = n
-                @endd = n
-            end
-            true
-        end 
+        true
+    end
+    
+    def extract
+            valor = @ini.value
+            @ini = @ini.next
+            return valor
+    end
         
-    end 
+end

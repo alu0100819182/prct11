@@ -73,36 +73,42 @@ describe Bibliografia do
 end
 
 describe Nodo do
-    before :each do
+    before :all do
         @n1 = Nodo.new(1,1)
-    end
-    
-        describe "Almacenamiento de los valores del nodo" do
+        describre "/ Expectativas del nodo"
             it "Data" do
                 expect(@n1.data).to eq(1)
             end
-            it "Siguiente" do
-                expect(@n1.siguiente).to eq(1)
+            it "Next" do
+                expect(@n1.next).to eq(1)
             end
-    end
-    
+        end
 end
 
 describe Listaenlazada do
-   
-    before :each do
-        @b1 = Bibliografia.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler'],'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide','Pragmatic Bookshelf',4,'July 7, 2013',['ISBN-13: 978-1937785499', 'ISBN-10: 1937785491'],'The Facets of Ruby')
+    before :all do
+
+        @biblio1 = Bibliografia.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7 2013', ['9781937785499', '1937785491'], 'The Facets of Ruby')
+        @biblio2 = Bibliografia.new('Scott Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27 2009', ['9781430218333','1430218339'], 'Pro')
+        @biblio3 = Bibliografia.new(['David Flanagan','Yukihiro Matsumoto'], 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4 2008', ['0596516177','9780596516178'])
+        @biblio4 = Bibliografia.new(['David Chelimsky','Dave Astels','Bryan Helmkamp','Dan North','Zach Dennis','Aslak Hellesoy'], 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'Pragmatic Bookshelf', 1, 'December 25 2010', ['1934356379','9781934356371'], 'The Facets of Ruby')
+        @biblio5 = Bibliografia.new('Richard E. Silverman','Git Pocket Guide', 'O’Reilly Media', 1, 'August 2 2013', ['1449325866','9781449325862'])
         @l1 = Listaenlazada.new()
-        @l2 = Listaenlazada.new()
+        
     end
-    
-    describe "/ Pruebas de la lista" do
-        it "/ Se puede insertar elemento" do
-            expect(@l1.insert(@biblio1)).to eq(true)
+  
+    describe "/ Expectativas de la lista" do
+        it "/ Insertar elemento" do
+           expect(@l1.insert(@biblio1)).to eq(true) 
         end
-        it "/ Se puede extraer un elemento" do
+        
+        it "/ Extraer elemento" do
             expect(@l1.extract).to eq(@biblio1)
         end
-    end
+        
+        it "/Debe existir una cabeza" do
+            cabeza = @l1.ini
+        end
     
+    end
 end
