@@ -75,9 +75,11 @@ end
 describe Nodo do
     before :all do
         @n1 = Nodo.new(1,1)
-        describre "/ Expectativas del nodo"
+    end
+        
+        describe "/ Expectativas del nodo" do
             it "Data" do
-                expect(@n1.data).to eq(1)
+                expect(@n1.value).to eq(1)
             end
             it "Next" do
                 expect(@n1.next).to eq(1)
