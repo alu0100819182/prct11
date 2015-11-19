@@ -133,3 +133,27 @@ describe Listaenlazada do
         
     end
 end
+
+describe Libro do
+    before :all do
+        @libro = Libro.new('Paulo Coelho', 'El alquimista', 'Planeta', 4, 'January 1 2010', ['9781937785499', '1937785491'], 'Spain')
+    end
+    
+    describe "/ Pruebas " do
+        it "Instancia" do
+           expect(@libro.instance_of?Libro).to eq(true)
+        end
+        it "Bibliografia" do
+            expect(@libro.is_a?Bibliografia).to eq(true)
+        end
+        it "Object" do
+            expect(@libro.is_a?Object).to eq(true)
+        end
+        it "BasicObject" do
+            expect(@libro.is_a?BasicObject).to eq(true)
+        end
+        it "Debe responder a un metodo de su madre" do
+            expect(@libro.respond_to?(:x)).to eq(true)
+        end
+    end
+end
