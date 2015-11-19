@@ -162,7 +162,7 @@ describe Articulorevista do
     
     describe "/ Pruebas " do
         it "Instancia" do
-           expect(@revista.instance_of?Revista).to eq(true)
+           expect(@revista.instance_of?Articulorevista).to eq(true)
         end
         it "Bibliografia" do
             expect(@revista.is_a?Bibliografia).to eq(true)
@@ -172,6 +172,27 @@ describe Articulorevista do
         end
         it "BasicObject" do
             expect(@revista.is_a?BasicObject).to eq(true)
+        end
+    end
+end
+
+describe Articuloperiodico do
+    before :all do
+        @periodico = Articuloperiodico.new('Maldini', 'Marca', 'Deportes', 6, 'March 3 2013', ['9781937785499', '1937785491'], 'per', "as")
+    end
+    
+    describe "/ Pruebas " do
+        it "Instancia" do
+           expect(@periodico.instance_of?Articuloperiodico).to eq(true)
+        end
+        it "Bibliografia" do
+            expect(@periodico.is_a?Bibliografia).to eq(true)
+        end
+        it "Object" do
+            expect(@periodico.is_a?Object).to eq(true)
+        end
+        it "BasicObject" do
+            expect(@periodico.is_a?BasicObject).to eq(true)
         end
     end
 end

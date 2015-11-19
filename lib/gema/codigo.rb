@@ -42,3 +42,11 @@ class Libro < Bibliografia
         @pa = pais
     end
 end
+
+class Articulorevista < Bibliografia
+    attr_reader :fp
+    def initialize(autor, titulo, editorial, edicion, publicacion, isbn, fechapublicacion, serie='0')
+        super(autor, titulo, editorial, edicion, publicacion, isbn, serie='0')
+        @fp = fechapublicacion
+    end
+end
