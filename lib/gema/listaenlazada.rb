@@ -1,4 +1,4 @@
-Nodo = Struct.new(:value,:next)
+Nodo = Struct.new(:value,:next,:prev)
 
 class Listaenlazada
     attr_reader :ini, :fin
@@ -16,22 +16,61 @@ class Listaenlazada
         end
     end
     
-    def insert (v)
-        n = Nodo.new(v,nil)
+    def insertb (v)
+        n = Nodo.new(v,nil,nil)
         if(empty == true)
-            @fin = n
             @ini = n
-        else
-            @fin.next = n
             @fin = n
+        else
+            @ini.prev = n;
         end
+        @ini = n
         return true
     end
     
-    def extract
-            valor = @ini.value
-            @ini = @ini.next
-            return valor
+     def insertf (v)
+        n = Nodo.new(v,nil,nil)
+    
+        if(empty == true)
+            @ini = n
+            @fin = n
+        else
+            nodo.prev = @fin
+            @fin.next = n;
+        end
+        @fin = n
+        return true
     end
-        
+    
+    def extractb
+            valor = @ini.value
+            if(empty == true)
+                return false
+            else
+                if(@ini == @fin)
+                    @ini = nil
+                    @fin = nil
+                    return valor
+                else
+                    @ini = @ini.next
+                    return valor
+                end
+            end
+    end
+    
+     def extractf
+            valor = @fin.value
+            if(empty == true)
+                return false
+            else
+                if(@ini == @fin)
+                    @ini = nil
+                    @fin = nil
+                    return valor
+                else
+                    @fin = @fin.prev
+                    return valor
+                end
+            end
+    end
 end
