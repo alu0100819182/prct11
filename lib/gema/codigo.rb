@@ -34,3 +34,11 @@ class Bibliografia
         "Autores: #@x, Título: #@y, Serie: #@z, Editorial: #@w, #@t Edición, Fecha de Publicación: #@s y ISBN: #@m"
     end
 end
+
+class Libro < Bibliografia
+    attr_reader :pa
+    def initialize(autor, titulo, editorial, edicion, publicacion, isbn, pais, serie='0')
+        super(autor, titulo, editorial, edicion, publicacion, isbn, serie='0')
+        @pa = pais
+    end
+end

@@ -152,8 +152,5 @@ describe Libro do
         it "BasicObject" do
             expect(@libro.is_a?BasicObject).to eq(true)
         end
-        it "Debe responder a un metodo de su madre" do
-            expect(@libro.respond_to?(:x)).to eq(true)
-        end
     end
 end
