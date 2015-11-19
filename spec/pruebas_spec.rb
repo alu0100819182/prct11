@@ -136,7 +136,7 @@ end
 
 describe Libro do
     before :all do
-        @libro = Libro.new('Paulo Coelho', 'El alquimista', 'Planeta', 4, 'January 1 2010', ['9781937785499', '1937785491'], 'Spain')
+        @libro = Libro.new('Paulo Coelho', 'El alquimista', 'Planeta', 4, 'January 1 2010', ['9781937785499', '1937785491'], 'librito', 'Spain')
     end
     
     describe "/ Pruebas " do
@@ -151,6 +151,27 @@ describe Libro do
         end
         it "BasicObject" do
             expect(@libro.is_a?BasicObject).to eq(true)
+        end
+    end
+end
+
+describe Articulorevista do
+    before :all do
+        @revista = Articulorevista.new('Bill Gates', 'ComputerHoy', 'Ordenador', 6, 'February 2 2012', ['9781937785499', '1937785491'], 'revistita', 1)
+    end
+    
+    describe "/ Pruebas " do
+        it "Instancia" do
+           expect(@revista.instance_of?Revista).to eq(true)
+        end
+        it "Bibliografia" do
+            expect(@revista.is_a?Bibliografia).to eq(true)
+        end
+        it "Object" do
+            expect(@revista.is_a?Object).to eq(true)
+        end
+        it "BasicObject" do
+            expect(@revista.is_a?BasicObject).to eq(true)
         end
     end
 end
