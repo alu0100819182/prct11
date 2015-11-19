@@ -196,3 +196,25 @@ describe Articuloperiodico do
         end
     end
 end
+
+describe Documentoelectronico do
+    before :all do
+        @elec = Documentoelectronico.new('Hatoko', 'Vandal', 'Videojuegos', 6, 'April 4 2015', ['9781937785499', '1937785491'], 'per', "accion")
+    end
+    
+    describe "/ Pruebas " do
+        it "Instancia" do
+           expect(@elec.instance_of?Articuloperiodico).to eq(true)
+        end
+        it "Bibliografia" do
+            expect(@elec.is_a?Bibliografia).to eq(true)
+        end
+        it "Object" do
+            expect(@elec.is_a?Object).to eq(true)
+        end
+        it "BasicObject" do
+            expect(@elec.is_a?BasicObject).to eq(true)
+        end
+    end
+end
+
