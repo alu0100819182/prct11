@@ -50,3 +50,11 @@ class Articulorevista < Bibliografia
         @fp = fechapublicacion
     end
 end
+
+class Articuloperiodico < Bibliografia
+    attr_reader :riv
+    def initialize(autor, titulo, editorial, edicion, publicacion, isbn, rival, serie='0')
+        super(autor, titulo, editorial, edicion, publicacion, isbn, serie='0')
+        @riv = rival
+    end
+end
