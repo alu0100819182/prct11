@@ -204,7 +204,7 @@ describe Documentoelectronico do
     
     describe "/ Pruebas " do
         it "Instancia" do
-           expect(@elec.instance_of?Articuloperiodico).to eq(true)
+           expect(@elec.instance_of?Documentoelectronico).to eq(true)
         end
         it "Bibliografia" do
             expect(@elec.is_a?Bibliografia).to eq(true)

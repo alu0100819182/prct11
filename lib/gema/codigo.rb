@@ -58,3 +58,11 @@ class Articuloperiodico < Bibliografia
         @riv = rival
     end
 end
+
+class Documentoelectronico < Bibliografia
+    attr_reader :est
+    def initialize(autor, titulo, editorial, edicion, publicacion, isbn, estilo, serie='0')
+        super(autor, titulo, editorial, edicion, publicacion, isbn, serie='0')
+        @est = estilo
+    end
+end
