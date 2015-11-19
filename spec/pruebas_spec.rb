@@ -90,44 +90,46 @@ describe Nodo do
         end
 end
 
-#describe Listaenlazada do
-#    before :all do
+describe Listaenlazada do
+    before :each do
 
-#        @biblio1 = Bibliografia.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7 2013', ['9781937785499', '1937785491'], 'The Facets of Ruby')
-#        @biblio2 = Bibliografia.new('Scott Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27 2009', ['9781430218333','1430218339'], 'Pro')
-#        @biblio3 = Bibliografia.new(['David Flanagan','Yukihiro Matsumoto'], 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4 2008', ['0596516177','9780596516178'])
-#        @biblio4 = Bibliografia.new(['David Chelimsky','Dave Astels','Bryan Helmkamp','Dan North','Zach Dennis','Aslak Hellesoy'], 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'Pragmatic Bookshelf', 1, 'December 25 2010', ['1934356379','9781934356371'], 'The Facets of Ruby')
-#        @biblio5 = Bibliografia.new('Richard E. Silverman','Git Pocket Guide', 'O’Reilly Media', 1, 'August 2 2013', ['1449325866','9781449325862'])
-#        @l1 = Listaenlazada.new()
-#        @l2 = Listaenlazada.new()
+        @biblio1 = Bibliografia.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7 2013', ['9781937785499', '1937785491'], 'The Facets of Ruby')
+        @biblio2 = Bibliografia.new('Scott Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27 2009', ['9781430218333','1430218339'], 'Pro')
+        @biblio3 = Bibliografia.new(['David Flanagan','Yukihiro Matsumoto'], 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4 2008', ['0596516177','9780596516178'])
+        @biblio4 = Bibliografia.new(['David Chelimsky','Dave Astels','Bryan Helmkamp','Dan North','Zach Dennis','Aslak Hellesoy'], 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'Pragmatic Bookshelf', 1, 'December 25 2010', ['1934356379','9781934356371'], 'The Facets of Ruby')
+        @biblio5 = Bibliografia.new('Richard E. Silverman','Git Pocket Guide', 'O’Reilly Media', 1, 'August 2 2013', ['1449325866','9781449325862'])
+        @l1 = Listaenlazada.new()
+        @l2 = Listaenlazada.new()
         
- #   end
-  
-#    describe "/ Expectativas de la lista" do
-#        it "/ Insertar elemento" do
-#           expect(@l1.insert(@biblio1)).to eq(true) 
-#        end
+    end
+   
+    describe "/ Expectativas de la lista" do
         
- #       it "/ Extraer elemento" do
- #           expect(@l1.extract).to eq(@biblio1)
- #       end
+        it "/ Relacion entre todas las bibliografias, insertar por inicio y extraer por final" do
+            expect(@l1.insertb(@biblio1)).to eq(true) 
+            expect(@l1.insertb(@biblio2)).to eq(true) 
+            expect(@l1.insertb(@biblio3)).to eq(true) 
+            expect(@l1.insertb(@biblio4)).to eq(true) 
+            expect(@l1.insertb(@biblio5)).to eq(true) 
+            expect(@l1.extractf).to eq(@biblio1)
+            expect(@l1.extractf).to eq(@biblio2)
+            expect(@l1.extractf).to eq(@biblio3)
+            expect(@l1.extractf).to eq(@biblio4)
+            expect(@l1.extractf).to eq(@biblio5)
+       end
+       
+       it "/ Relacion entre todas las bibliografias, insertar por final y extraer por inicio" do
+            expect(@l2.insertf(@biblio1)).to eq(true) 
+            expect(@l2.insertf(@biblio2)).to eq(true) 
+            expect(@l2.insertf(@biblio3)).to eq(true) 
+            expect(@l2.insertf(@biblio4)).to eq(true) 
+            expect(@l2.insertf(@biblio5)).to eq(true) 
+            expect(@l2.extractb).to eq(@biblio1)
+            expect(@l2.extractb).to eq(@biblio2)
+            expect(@l2.extractb).to eq(@biblio3)
+            expect(@l2.extractb).to eq(@biblio4)
+            expect(@l2.extractb).to eq(@biblio5)
+       end
         
-  #      it "/Debe existir una cabeza" do
-  #          cabeza = @l1.ini
-  #      end
-        
-   #     it "/ Relacion entre todas las bibliografias, insertando y extrayendo" do
-   #          expect(@l2.insert(@biblio1)).to eq(true) 
-   #          expect(@l2.insert(@biblio2)).to eq(true) 
-   #          expect(@l2.insert(@biblio3)).to eq(true) 
-   #          expect(@l2.insert(@biblio4)).to eq(true) 
-   #          expect(@l2.insert(@biblio5)).to eq(true) 
-   #          expect(@l2.extract).to eq(@biblio1)
-   #          expect(@l2.extract).to eq(@biblio2)
-   #          expect(@l2.extract).to eq(@biblio3)
-   #          expect(@l2.extract).to eq(@biblio4)
-   #          expect(@l2.extract).to eq(@biblio5)
-   #     end
-        
-   # end
-#end
+    end
+end

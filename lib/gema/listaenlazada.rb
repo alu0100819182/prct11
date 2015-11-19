@@ -35,7 +35,7 @@ class Listaenlazada
             @ini = n
             @fin = n
         else
-            nodo.prev = @fin
+            n.prev = @fin
             @fin.next = n;
         end
         @fin = n
