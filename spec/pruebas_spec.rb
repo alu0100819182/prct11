@@ -200,6 +200,7 @@ end
 describe Documentoelectronico do
     before :all do
         @elec = Documentoelectronico.new('Hatoko', 'Vandal', 'Videojuegos', 6, 'April 4 2015', ['9781937785499', '1937785491'], 'per', "accion")
+        @elec2 = Documentoelectronico.new('Hatoko', 'Vandal', 'Videojuegos', 6, 'April 4 2015', ['9781937785499', '1937785491'], 'per', "accion")
     end
     
     describe "/ Pruebas " do
@@ -215,6 +216,9 @@ describe Documentoelectronico do
         it "BasicObject" do
             expect(@elec.is_a?BasicObject).to eq(true)
         end
+        it "tipo" do
+            expect(@elec.respond_to?:riv).to eq(false)
+    end
     end
 end
 

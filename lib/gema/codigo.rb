@@ -65,4 +65,4 @@ class Documentoelectronico < Bibliografia
         super(autor, titulo, editorial, edicion, publicacion, isbn, serie='0')
         @est = estilo
     end
-end
+end 
