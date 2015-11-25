@@ -1,12 +1,14 @@
 Nodo = Struct.new(:value,:next,:prev)
 
 class Listaenlazada
+    include Enumerable
     attr_reader :ini, :fin
     
     def initialize
         @ini = nil
         @fin = nil
     end
+    
     
     def empty
         if (@ini == nil)

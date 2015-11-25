@@ -100,6 +100,7 @@ describe Listaenlazada do
         @biblio5 = Bibliografia.new('Richard E. Silverman','Git Pocket Guide', 'O’Reilly Media', 1, 'August 2 2013', ['1449325866','9781449325862'])
         @l1 = Listaenlazada.new()
         @l2 = Listaenlazada.new()
+        @l3 = Listaenlazada.new()
         
     end
    
@@ -130,8 +131,36 @@ describe Listaenlazada do
             expect(@l2.extractb).to eq(@biblio4)
             expect(@l2.extractb).to eq(@biblio5)
        end
-        
+       
+        it "Prueba" do
+            expect(@l3.insertb(@biblio1)).to eq(true) 
+            expect(@l3.insertb(@biblio2)).to eq(true) 
+            expect(@l3.insertb(@biblio3)).to eq(true) 
+            expect(@l3.insertb(@biblio4)).to eq(true) 
+        end
     end
+        
+end
+
+describe "/ Enumerable" do
+    @biblio1 = Bibliografia.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7 2013', ['9781937785499', '1937785491'], 'The Facets of Ruby')
+    @biblio2 = Bibliografia.new('Scott Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27 2009', ['9781430218333','1430218339'], 'Pro')
+    @biblio3 = Bibliografia.new(['David Flanagan','Yukihiro Matsumoto'], 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4 2008', ['0596516177','9780596516178'])
+    @biblio4 = Bibliografia.new(['David Chelimsky','Dave Astels','Bryan Helmkamp','Dan North','Zach Dennis','Aslak Hellesoy'], 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'Pragmatic Bookshelf', 1, 'December 25 2010', ['1934356379','9781934356371'], 'The Facets of Ruby')
+    @biblio5 = Bibliografia.new('Richard E. Silverman','Git Pocket Guide', 'O’Reilly Media', 1, 'August 2 2013', ['1449325866','9781449325862'])
+    @l1 = Listaenlazada.new()
+    
+    @l1.insertb(@biblio1)
+    @l1.insertb(@biblio2)
+    @l1.insertb(@biblio3)
+    @l1.insertb(@biblio4)
+    
+    describe "Pruebas" do
+        it "all" do
+            (@l1.all?{|i| i == @biblio5}).to eq(false)
+        end
+    end
+    
 end
 
 describe Libro do
@@ -221,4 +250,5 @@ describe Documentoelectronico do
     end
     end
 end
+
 
