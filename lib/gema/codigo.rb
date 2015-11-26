@@ -1,4 +1,5 @@
 class Bibliografia
+    include Comparable
     attr_reader :x, :y, :z, :w, :t, :s, :m
     def initialize(autor, titulo, editorial, edicion, publicacion, isbn, serie='0')
         @x = autor
@@ -9,6 +10,11 @@ class Bibliografia
         @m = isbn
         @z = serie
     end
+    
+    def <=> (other)
+        @t <=> other.t
+    end
+    
     def getautor 
         @x
     end

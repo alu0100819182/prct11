@@ -8,7 +8,7 @@ class Listaenlazada
         @ini = nil
         @fin = nil
     end
-    
+
     
     def empty
         if (@ini == nil)

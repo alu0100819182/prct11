@@ -5,6 +5,7 @@ require 'spec_helper'
 describe Bibliografia do
     before :each do
         @b1 = Bibliografia.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler'],'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide','Pragmatic Bookshelf',4,'July 7, 2013',['ISBN-13: 978-1937785499', 'ISBN-10: 1937785491'],'The Facets of Ruby')
+        @b2 = Bibliografia.new(['Dave Thomas', 'Andy Hunt', 'Chad Fowler'],'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide','Pragmatic Bookshelf',7,'July 7, 2013',['ISBN-13: 978-1937785499', 'ISBN-10: 1937785491'],'The Facets of Ruby')    
     end
     
     describe "Datos de la bibliografia" do
@@ -70,6 +71,18 @@ describe Bibliografia do
             @b1.to_s.should == ("Autores: [\"Dave Thomas\", \"Andy Hunt\", \"Chad Fowler\"], Título: Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide, Serie: The Facets of Ruby, Editorial: Pragmatic Bookshelf, 4 Edición, Fecha de Publicación: July 7, 2013 y ISBN: [\"ISBN-13: 978-1937785499\", \"ISBN-10: 1937785491\"]")
         end
     end
+    
+    describe "Comparable" do
+    
+        it "/Iguales" do
+           expect(@b1==@b2).to eq(false)
+        end
+        it "/Menor" do
+            expect(@b1 < @b2).to eq(true)
+        end
+        
+end
+    
 end
 
 describe Nodo do
@@ -140,27 +153,6 @@ describe Listaenlazada do
         end
     end
         
-end
-
-describe "/ Enumerable" do
-    @biblio1 = Bibliografia.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7 2013', ['9781937785499', '1937785491'], 'The Facets of Ruby')
-    @biblio2 = Bibliografia.new('Scott Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27 2009', ['9781430218333','1430218339'], 'Pro')
-    @biblio3 = Bibliografia.new(['David Flanagan','Yukihiro Matsumoto'], 'The Ruby Programming Language', 'O’Reilly Media', 1, 'February 4 2008', ['0596516177','9780596516178'])
-    @biblio4 = Bibliografia.new(['David Chelimsky','Dave Astels','Bryan Helmkamp','Dan North','Zach Dennis','Aslak Hellesoy'], 'The RSpecBook: Behaviour Driven Development with RSpec, Cucumber, and Friends', 'Pragmatic Bookshelf', 1, 'December 25 2010', ['1934356379','9781934356371'], 'The Facets of Ruby')
-    @biblio5 = Bibliografia.new('Richard E. Silverman','Git Pocket Guide', 'O’Reilly Media', 1, 'August 2 2013', ['1449325866','9781449325862'])
-    @l1 = Listaenlazada.new()
-    
-    @l1.insertb(@biblio1)
-    @l1.insertb(@biblio2)
-    @l1.insertb(@biblio3)
-    @l1.insertb(@biblio4)
-    
-    describe "Pruebas" do
-        it "all" do
-            (@l1.all?{|i| i == @biblio5}).to eq(false)
-        end
-    end
-    
 end
 
 describe Libro do
