@@ -81,6 +81,9 @@ describe Bibliografia do
             expect(@b1 < @b2).to eq(true)
         end
         
+        it "/Mayor o igual" do
+            expect(@b2 >= @b1).to eq(true)
+        end
 end
     
 end
