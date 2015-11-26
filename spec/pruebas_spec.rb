@@ -77,6 +77,7 @@ describe Bibliografia do
         it "/Iguales" do
            expect(@b1==@b2).to eq(false)
         end
+        
         it "/Menor" do
             expect(@b1 < @b2).to eq(true)
         end
@@ -84,7 +85,7 @@ describe Bibliografia do
         it "/Mayor o igual" do
             expect(@b2 >= @b1).to eq(true)
         end
-end
+    end
     
 end
 
@@ -107,7 +108,7 @@ describe Nodo do
 end
 
 describe Listaenlazada do
-    before :each do
+    before :all do
 
         @biblio1 = Bibliografia.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7 2013', ['9781937785499', '1937785491'], 'The Facets of Ruby')
         @biblio2 = Bibliografia.new('Scott Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27 2009', ['9781430218333','1430218339'], 'Pro')
@@ -149,11 +150,20 @@ describe Listaenlazada do
        end
        
         it "Prueba" do
-            expect(@l3.insertb(@biblio1)).to eq(true) 
-            expect(@l3.insertb(@biblio2)).to eq(true) 
-            expect(@l3.insertb(@biblio3)).to eq(true) 
-            expect(@l3.insertb(@biblio4)).to eq(true) 
+            expect(@l3.insertb(1)).to eq(true) 
+            expect(@l3.insertb(2)).to eq(true) 
+            expect(@l3.insertb(3)).to eq(true) 
+            expect(@l3.insertb(4)).to eq(true) 
         end
+    
+        it "comprobrando el metodo all? con un bloque vacio" do
+            expect(@l3.all?).to eq(true)
+        end 
+        
+         it "comprobrando el metodo any?" do
+            expect(@l3.any?).to eq(true)
+        end 
+        
     end
         
 end
@@ -161,6 +171,7 @@ end
 describe Libro do
     before :all do
         @libro = Libro.new('Paulo Coelho', 'El alquimista', 'Planeta', 4, 'January 1 2010', ['9781937785499', '1937785491'], 'librito', 'Spain')
+        @libro2 = Libro.new('Paulo Coelho', 'El alquimista', 'Planeta', 5, 'January 1 2010', ['9781937785499', '1937785491'], 'librito', 'Spain')
     end
     
     describe "/ Pruebas " do

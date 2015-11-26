@@ -8,7 +8,14 @@ class Listaenlazada
         @ini = nil
         @fin = nil
     end
-
+    
+    def each
+        auxiliar = @ini
+        while auxiliar!=nil do
+           yield auxiliar.value
+           auxiliar = auxiliar.next
+        end
+    end
     
     def empty
         if (@ini == nil)
