@@ -108,7 +108,7 @@ describe Nodo do
 end
 
 describe Listaenlazada do
-    before :all do
+    before :each do
 
         @biblio1 = Bibliografia.new(['Dave Thomas','Andy Hunt','Chad Fowler'], 'Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide', 'Pragmatic Bookshelf', 4, 'July 7 2013', ['9781937785499', '1937785491'], 'The Facets of Ruby')
         @biblio2 = Bibliografia.new('Scott Chacon', 'Pro Git 2009th Edition', 'Apress', 2009, 'August 27 2009', ['9781430218333','1430218339'], 'Pro')
@@ -118,6 +118,10 @@ describe Listaenlazada do
         @l1 = Listaenlazada.new()
         @l2 = Listaenlazada.new()
         @l3 = Listaenlazada.new()
+        @l3.insertf(1) 
+        @l3.insertf(2)
+        @l3.insertf(3)
+        @l3.insertf(4)
         
     end
    
@@ -149,12 +153,6 @@ describe Listaenlazada do
             expect(@l2.extractb).to eq(@biblio5)
        end
        
-        it "Prueba" do
-            expect(@l3.insertb(1)).to eq(true) 
-            expect(@l3.insertb(2)).to eq(true) 
-            expect(@l3.insertb(3)).to eq(true) 
-            expect(@l3.insertb(4)).to eq(true) 
-        end
     
         it "comprobrando el metodo all? con un bloque vacio" do
             expect(@l3.all?).to eq(true)
@@ -164,8 +162,20 @@ describe Listaenlazada do
             expect(@l3.any?).to eq(true)
         end 
         
-    end
+        it "comprobrando el metodo count" do
+             expect(@l3.count).to eq(4)
+        end
         
+        it "comprobrando el metodo detect" do
+            expect(@l3.detect {|i| i == 4}).to eq(4)
+        end
+        
+        it "comprobrando max" do
+            expect(@l3.max).to eq(4)
+        end
+        
+    end
+    
 end
 
 describe Libro do
