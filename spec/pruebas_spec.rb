@@ -165,7 +165,7 @@ describe Listaenlazada do
              expect(@l3.count).to eq(4)
         end
         
-        it "comprobrando max" do
+        it "comprobrando max " do
             expect(@l3.max).to eq(@biblio2)
         end
         
