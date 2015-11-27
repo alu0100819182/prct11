@@ -118,10 +118,10 @@ describe Listaenlazada do
         @l1 = Listaenlazada.new()
         @l2 = Listaenlazada.new()
         @l3 = Listaenlazada.new()
-        @l3.insertf(1) 
-        @l3.insertf(2)
-        @l3.insertf(3)
-        @l3.insertf(4)
+        @l3.insertf(@biblio1) 
+        @l3.insertf(@biblio2)
+        @l3.insertf(@biblio3)
+        @l3.insertf(@biblio4)
         
     end
    
@@ -153,7 +153,6 @@ describe Listaenlazada do
             expect(@l2.extractb).to eq(@biblio5)
        end
        
-    
         it "comprobrando el metodo all? con un bloque vacio" do
             expect(@l3.all?).to eq(true)
         end 
@@ -166,12 +165,8 @@ describe Listaenlazada do
              expect(@l3.count).to eq(4)
         end
         
-        it "comprobrando el metodo detect" do
-            expect(@l3.detect {|i| i == 4}).to eq(4)
-        end
-        
         it "comprobrando max" do
-            expect(@l3.max).to eq(4)
+            expect(@l3.max).to eq(@biblio2)
         end
         
     end
