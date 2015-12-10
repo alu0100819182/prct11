@@ -49,6 +49,9 @@ class APA
         if(@o.instance_of?Articulorevista)
             mensaje3 = "#{nomape}#{@o.s}. #{may}. #{@o.t} #{@o.w}. #{@o.fp}"
         end
+        if(@o.instance_of?Articuloperiodico)
+            mensaje3 = "#{nomape}#{@o.s}. #{@o.w}. #{may}, pp. #{@o.riv}" 
+        end
         mensaje3
     end
     
