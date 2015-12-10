@@ -43,10 +43,12 @@ class APA
     end
     
     def resultado
-        if (@o.instance_of?Libro)
+        if(@o.instance_of?Libro)
             mensaje3 = "#{nomape}#{@o.s}. #{may} #{@o.t} #{@o.w}. #{@o.pa}."
         end
-        
+        if(@o.instance_of?Articulorevista)
+            mensaje3 = "#{nomape}#{@o.s}. #{may}. #{@o.t} #{@o.w}. #{@o.fp}"
+        end
         mensaje3
     end
     
