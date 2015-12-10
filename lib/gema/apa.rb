@@ -1,5 +1,4 @@
 require 'gema/codigo'
-require 'gema/listaenlazada'
 
 class APA
     include Comparable
@@ -41,6 +40,14 @@ class APA
             end
         end
         @o.y
+    end
+    
+    def resultado
+        if (@o.instance_of?Libro)
+            mensaje3 = "#{nomape}#{@o.s}. #{may} #{@o.t} #{@o.w}. #{@o.pa}."
+        end
+        
+        mensaje3
     end
     
 end

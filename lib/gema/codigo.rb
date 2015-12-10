@@ -44,32 +44,32 @@ end
 
 class Libro < Bibliografia
     attr_reader :pa
-    def initialize(autor, titulo, editorial, edicion, publicacion, isbn, pais, serie='0')
-        super(autor, titulo, editorial, edicion, publicacion, isbn, serie='0')
+    def initialize(autor, apellido, titulo, editorial, edicion, publicacion, isbn, pais, serie='0')
+        super(autor, apellido, titulo, editorial, edicion, publicacion, isbn, serie='0')
         @pa = pais
     end
 end
 
 class Articulorevista < Bibliografia
     attr_reader :fp
-    def initialize(autor, titulo, editorial, edicion, publicacion, isbn, fechapublicacion, serie='0')
-        super(autor, titulo, editorial, edicion, publicacion, isbn, serie='0')
+    def initialize(autor, apellido, titulo, editorial, edicion, publicacion, isbn, fechapublicacion, serie='0')
+        super(autor, apellido, titulo, editorial, edicion, publicacion, isbn, serie='0')
         @fp = fechapublicacion
     end
 end
 
 class Articuloperiodico < Bibliografia
     attr_reader :riv
-    def initialize(autor, titulo, editorial, edicion, publicacion, isbn, rival, serie='0')
-        super(autor, titulo, editorial, edicion, publicacion, isbn, serie='0')
+    def initialize(autor, apellido, titulo, editorial, edicion, publicacion, isbn, rival, serie='0')
+        super(autor, apellido, titulo, editorial, edicion, publicacion, isbn, serie='0')
         @riv = rival
     end
 end
 
 class Documentoelectronico < Bibliografia
     attr_reader :est
-    def initialize(autor, titulo, editorial, edicion, publicacion, isbn, estilo, serie='0')
-        super(autor, titulo, editorial, edicion, publicacion, isbn, serie='0')
+    def initialize(autor, apellido, titulo, editorial, edicion, publicacion, isbn, estilo, serie='0')
+        super(autor, apellido, titulo, editorial, edicion, publicacion, isbn, serie='0')
         @est = estilo
     end
 end 
