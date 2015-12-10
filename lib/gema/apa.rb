@@ -3,7 +3,7 @@ require 'gema/listaenlazada'
 
 class APA
     include Comparable
-    attr_reader :o, :nombre
+    attr_reader :o, :titulo
     def initialize (biblio)
         @o = biblio
     end
@@ -30,6 +30,17 @@ class APA
         else
             @o.ap <=> ohter.ap
         end
+    end
+    
+    def may
+        tam = @o.y.length
+        @o.y[0] = @o.y[0].capitalize
+        for i in 1..tam-1
+            if(@o.y[i]==" ")
+                @o.y[i+1] = @o.y[i+1].capitalize
+            end
+        end
+        @o.y
     end
     
 end
