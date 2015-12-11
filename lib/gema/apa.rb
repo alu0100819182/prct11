@@ -44,13 +44,16 @@ class APA
     
     def resultado
         if(@o.instance_of?Libro)
-            mensaje3 = "#{nomape}#{@o.s}. #{may} #{@o.t} #{@o.w}. #{@o.pa}."
+            mensaje3 = "  #{nomape}#{@o.s}. #{may} #{@o.t} #{@o.w}. #{@o.pa}.  "
         end
         if(@o.instance_of?Articulorevista)
-            mensaje3 = "#{nomape}#{@o.s}. #{may}. #{@o.t} #{@o.w}. #{@o.fp}"
+            mensaje3 = "  #{nomape}#{@o.s}. #{may}. #{@o.t} #{@o.w}. #{@o.fp}  "
         end
         if(@o.instance_of?Articuloperiodico)
-            mensaje3 = "#{nomape}#{@o.s}. #{@o.w}. #{may}, pp. #{@o.riv}" 
+            mensaje3 = "  #{nomape}#{@o.s}. #{@o.w}. #{may}, pp. #{@o.riv}  " 
+        end
+        if(@o.instance_of?Documentoelectronico)
+            mensaje3 = "  #{nomape}#{@o.s}. #{@o.y} #{@o.t}. Lugar de publicacion: #{@o.est}. Disponible en: #{@o.z}  " 
         end
         mensaje3
     end
