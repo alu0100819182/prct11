@@ -2,7 +2,7 @@ require 'gema/codigo'
 
 class APA
     include Comparable
-    attr_reader :o, :titulo
+    attr_reader :o
     def initialize (biblio)
         @o = biblio
     end

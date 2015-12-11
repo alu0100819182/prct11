@@ -22,6 +22,10 @@ describe APA do
     
     describe "pruebas" do
         
+        it "Existencia" do
+            expect(@apa1.o).to eq(@biblio2)
+        end
+        
         it "Nombre y apellido" do
             expect(@apa1.nomape).to eq("Autor, T. D. & Autor, H. A. ")
             expect(@apa2.nomape).to eq("Autor, A. O. ")
@@ -34,6 +38,7 @@ describe APA do
             @listaAPA.insertf(@revista)
             @listaAPA.insertf(@periodico)
             @listaAPA.insertf(@elec)
+            expect(@listaAPA.count).to eq(5)
             @listaAPA.sort
             expect(@listaAPA.extractb).to eq(@biblio1)
             expect(@listaAPA.extractb).to eq(@libro)
